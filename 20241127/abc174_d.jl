@@ -4,13 +4,8 @@ function main()
     n = parseint()
     s = parsestring()
 
-    white_count = count('W', s)
-
-    if n == white_count
-        result = 0
-    else
-        result = count('W', s[begin:white_count])
-    end
+    red_count = count('R', s)
+    result = red_count - count('R', s[begin:red_count])
 
     println(result)
 end
