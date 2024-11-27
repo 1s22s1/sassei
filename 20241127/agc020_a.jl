@@ -1,19 +1,12 @@
 using Printf
 
 function main()
-    a, b = parseints()
+    n, a, b = parseints()
 
-
-    if a ≤ 0 ≤ b
-        println("Zero")
-    elseif b < 0
-        if iseven(b - a)
-            println("Negative")
-        else
-            println("Positive")
-        end
+    if iseven(abs(a - b))
+        println("Alice")
     else
-        println("Positive")
+        println("Borys")
     end
 end
 

@@ -1,20 +1,21 @@
 using Printf
 
 function main()
-    a, b = parseints()
+    n, k = parseints()
+    an = parseints()
 
+    result = 0
 
-    if a ≤ 0 ≤ b
-        println("Zero")
-    elseif b < 0
-        if iseven(b - a)
-            println("Negative")
-        else
-            println("Positive")
+    j = 1
+    for i ∈ 1:n-1
+        while j < n && an[j+1] - an[i] ≤ k
+            j += 1
         end
-    else
-        println("Positive")
+
+        result += j - i
     end
+
+    println(result)
 end
 
 parseint() = readline() |> x -> parse(Int, x)

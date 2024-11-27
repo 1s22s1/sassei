@@ -3,35 +3,26 @@ using Printf
 function main()
     n = parseint()
 
-    t = 0
-    x = 0
-    y = 0
+    t, x, y = 0, 0, 0
+    result = "Yes"
 
     for _ ∈ 1:n
         next_t, next_x, next_y = parseints()
 
-        t = next_t - t
-        x = abs(next_x - x)
-        y = abs(next_y - y)
+        t, x, y = next_t - t, abs(x - next_x), abs(y - next_y)
 
-        if t < x + y
-            println("No")
-
-            return
+        if x + y > t
+            result = "No"
         end
 
         if t % 2 ≠ (x + y) % 2
-            println("No")
-
-            return
+            result = "No"
         end
 
-        t = next_t
-        x = next_x
-        y = next_y
+        t, x, y = next_t, next_x, next_y
     end
 
-    println("Yes")
+    println(result)
 end
 
 parseint() = readline() |> x -> parse(Int, x)

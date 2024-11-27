@@ -1,19 +1,20 @@
 using Printf
 
 function main()
-    a, b = parseints()
+    n = parseint()
+    an = parseints()
 
-
-    if a ≤ 0 ≤ b
-        println("Zero")
-    elseif b < 0
-        if iseven(b - a)
-            println("Negative")
-        else
-            println("Positive")
+    count = 0
+    for a ∈ an
+        if isodd(a)
+            count += 1
         end
+    end
+
+    if iseven(count)
+        println("YES")
     else
-        println("Positive")
+        println("NO")
     end
 end
 
