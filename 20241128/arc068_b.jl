@@ -4,24 +4,13 @@ function main()
     n = parseint()
     an = parseints()
 
-    dict = tally(an)
-    kind_number = dict |> keys |> collect |> unique |> length
+    kind_count = an |> unique!|> length
 
-    if iseven(kind_number)
-        println(kind_number - 1)
+    if iseven(kind_count)
+        println(kind_count - 1)
     else
-        println(kind_number)
+        println(kind_count)
     end
-end
-
-function tally(array::Union{Vector{Int},String})::Dict
-    dict = Dict()
-
-    for e ∈ array
-        dict[e] = get(dict, e, 0) + 1
-    end
-
-    return dict
 end
 
 parseint() = readline() |> x -> parse(Int, x)
