@@ -8,33 +8,17 @@ function main()
     result = 0
 
     for i ∈ 1:n
-        # 街にいるモンスターの数が勇者未満の数の場合
-        if bn[i] ≥ an[i] + an[i+1]
-            result += (an[i] + an[i + 1])
+        monster = min(an[i], bn[i])
 
-            an[i] = 0
-            an[i + 1] = 0
+        result += monster
+        an[i] -= monster
+        bn[i] -= monster
 
-        # 街にいるモンスターの数が勇者以上の数の場合
-        else
-            result += bn[i]
+        monster = min(an[i+1], bn[i])
 
-            if bn[i] ≥ an[i]
-                an[i] = 0
-                bn[i] -= an[i]
-            else
-                bn[i] = 0
-                an[i] -= bn[i]
-            end
-
-            if bn[i] ≥ an[i+1]
-                an[i+1] = 0
-                bn[i] -= an[i]
-            else
-                bn[i] = 0
-                an[i+1] -= bn[i]
-            end
-        end
+        result += monster
+        an[i+1] -= monster
+        bn[i] -= monster
     end
 
     println(result)

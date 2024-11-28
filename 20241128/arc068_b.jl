@@ -4,7 +4,7 @@ function main()
     n = parseint()
     an = parseints()
 
-    kind_count = an |> unique!|> length
+    kind_count = an |> unique! |> length
 
     if iseven(kind_count)
         println(kind_count - 1)
