@@ -5,11 +5,13 @@ function main()
     an = parseints()
 
     dict = tally(an)
-    arr = sort(collect(values(dict)), rev = true)
+    kind_number = dict |> keys |> collect |> unique |> length
 
-    result = arr[begin] + arr[begin+1]
-
-    println(result)
+    if iseven(kind_number)
+        println(kind_number - 1)
+    else
+        println(kind_number)
+    end
 end
 
 function tally(array::Union{Vector{Int},String})::Dict

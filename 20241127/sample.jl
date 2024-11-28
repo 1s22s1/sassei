@@ -1,2 +1,1 @@
-n =
-    println("OK")
+n = println("OK")
