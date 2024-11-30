@@ -1,2 +1,1 @@
-n =
-    println(3)
+n = println(3)
