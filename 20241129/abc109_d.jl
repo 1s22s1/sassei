@@ -9,7 +9,7 @@ function main()
     for i ∈ 1:h
         for j ∈ 1:w-1
             if isodd(a[i][j])
-                push!(result, [i, j, i, j+1])
+                push!(result, [i, j, i, j + 1])
 
                 a[i][j] -= 1
                 a[i][j+1] += 1
@@ -17,7 +17,7 @@ function main()
         end
 
         if isodd(a[i][w]) && i ≠ h
-            push!(result, [i, w, i+1, w])
+            push!(result, [i, w, i + 1, w])
 
             a[i][w] -= 1
             a[i+1][w] += 1
