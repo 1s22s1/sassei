@@ -1,9 +1,10 @@
 using Printf
 
 function main()
+    n, d = parseints()
+    s = parsestring()
 
-
-    result = 0
+    result = count('.', s) + d
 
     println(result)
 end
