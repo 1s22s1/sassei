@@ -4,7 +4,7 @@ function main()
     n = parseint()
     an = parseints()
 
-    sort!(an, rev=true)
+    sort!(an, rev = true)
 
     result = 0
     cur = 2
