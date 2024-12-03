@@ -17,8 +17,9 @@ function main()
 end
 
 function rec(arr, count)
-    if length(arr) == n
-        indexes = findall(x -> x == 1, arr)
+    if count == n
+        # indexes = findall(x -> x == 1, arr)
+        indexes = arr
 
         if !isempty(indexes)
             sum_arr = sum(can[indexes])
@@ -31,11 +32,17 @@ function rec(arr, count)
         return
     end
 
-    for i ∈ 0:1
-        push!(arr, i)
-        rec(arr, count + 1)
-        pop!(arr)
-    end
+    push!(arr, can[count+1])
+    rec(arr, count + 1)
+    pop!(arr)
+
+    rec(arr, count + 1)
+
+    # for i ∈ 0:1
+    #     push!(arr, i)
+    #     rec(arr, count + 1)
+    #     pop!(arr)
+    # end
 end
 
 parseint() = readline() |> x -> parse(Int, x)
