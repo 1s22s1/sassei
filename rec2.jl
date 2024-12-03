@@ -7,7 +7,7 @@ function main()
 
     global result = typemax(Int)
 
-    rec([])
+    rec([], 0)
 
     if result == typemax(Int)
         println(-1)
@@ -16,7 +16,7 @@ function main()
     end
 end
 
-function rec(arr)
+function rec(arr, count)
     if length(arr) == n
         indexes = findall(x -> x == 1, arr)
 
@@ -33,7 +33,7 @@ function rec(arr)
 
     for i ∈ 0:1
         push!(arr, i)
-        rec(arr)
+        rec(arr, count + 1)
         pop!(arr)
     end
 end
