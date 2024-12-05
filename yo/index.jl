@@ -15,7 +15,7 @@ function main()
             colorbar = false,
             ticks = false,
             axis = false,
-            fillcolor = cgrad(:greenpink),
+            fillcolor = cgrad(:pink),
         )
 
         next()
