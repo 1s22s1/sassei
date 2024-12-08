@@ -32,7 +32,10 @@ function bfs(maze, h, w, start, d)
             next_x = target_positon[begin] + x
             next_y = target_positon[end] + y
 
-            if 1 ≤ next_x ≤ h && 1 ≤ next_y ≤ w && maze[next_x][next_y] ∈ [".", "H"] && seen[next_x][next_y] == -1
+            if 1 ≤ next_x ≤ h &&
+               1 ≤ next_y ≤ w &&
+               maze[next_x][next_y] ∈ [".", "H"] &&
+               seen[next_x][next_y] == -1
                 push!(nexts, [next_x, next_y])
 
                 if maze[next_x][next_y] == "."
@@ -40,7 +43,8 @@ function bfs(maze, h, w, start, d)
                         push!(return_arr, [next_x, next_y])
                     end
 
-                    seen[next_x][next_y] = seen[target_positon[begin]][target_positon[end]] + 1
+                    seen[next_x][next_y] =
+                        seen[target_positon[begin]][target_positon[end]] + 1
                 elseif maze[next_x][next_y] == "#"
                     seen[next_x][next_y] = typemax(Int)
                 end
