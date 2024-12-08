@@ -33,7 +33,7 @@ function split_array(array::Vector{Int}, indexes)::Vector{Vector{Int}}
 
     push!(result, array[begin:indexes[begin]])
 
-    for i in 2:length(indexes)
+    for i = 2:length(indexes)
         push!(result, array[indexes[i-1]+1:indexes[i]])
     end
 
