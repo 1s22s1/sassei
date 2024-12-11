@@ -1,4 +1,4 @@
-function func(arr::Union{Vector{SubString{String}}, Vector{Char}})
+function func(arr::Union{Vector{SubString{String}},Vector{Char}})
     @show arr
 end
 
